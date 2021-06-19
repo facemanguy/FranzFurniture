@@ -7,7 +7,7 @@ class FurnitureType(models.Model):
     typeDescription=models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.typename
+        return self.typeName
 
     class Meta:
         db_table='furnituretype'

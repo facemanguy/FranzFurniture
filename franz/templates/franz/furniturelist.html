@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of all Furniture</h1>
+<table class='table'>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Price</th>
+    <th>Description</th>
+</tr>
+{% for f in furnList %}
+    <tr>
+        <td><a href="{% url 'furnituredetail' id=f.id %}">{{ f.furnitureName }}</td>
+        <td>{{ f.furnitureType }}</td>
+        <td>{{ f.furniturePrice }}</td>
+        <td>{{ f.furnitureDescription }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

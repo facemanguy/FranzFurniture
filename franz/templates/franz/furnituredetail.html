@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ furn.furnitureName }}</h2>
+<p>Name: {{deets.detailName }}</p>
+<p>Type: {{ furn.furnitureType }} </p>
+<p>Added by: {{ furn.user }}</p>
+<p>Entry Date: {{ furn.dateEntered }}</p>
+<p>Description: {{ furn.furnitureDescription }}</p>
+<p>Price: {{ furn.furniturePrice }}</p>
+<p>Dimensions: {{ furn.length }}L X {{ deets.width }}W X {{ deets.height }}H</p>
+<p>Materials: {{ deets }}</p>
+
+{% endblock %}

@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import FurnitureType, Furniture, FurnitureDetails
 from django.urls import reverse_lazy
 from .forms import FurnitureForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index (request):
@@ -24,6 +25,7 @@ def getFurnitureDetail(request, id):
     }
     return render(request, 'franz/furnituredetail.html', context=context)
 
+@login_required
 def newFurniture(request):
     form=FurnitureForm
 
@@ -36,3 +38,9 @@ def newFurniture(request):
     else:
         form=FurnitureForm()
     return render(request, 'franz/newfurniture.html', {'form' : form})
+
+def loginmessage(request):
+    return render(request, 'franz/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'franz/logoutmessage.html')

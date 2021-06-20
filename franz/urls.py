@@ -6,4 +6,5 @@ urlpatterns = [
     path('types/', views.types, name='types'),
     path('furniturelist/', views.getFurniture, name='furniture'),
     path('furnituredetail/<int:id>', views.getFurnitureDetail, name='furnituredetail'),
+    path('newfurniture/', views.newFurniture, name='newfurniture'),
 ]
